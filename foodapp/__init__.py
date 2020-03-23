@@ -12,8 +12,8 @@ db=SQLAlchemy(app)
 migrate=Migrate(app, db)
 from foodapp.models import Order, Category, User, Meal, meals_orders_association
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 from foodapp.views import *
 

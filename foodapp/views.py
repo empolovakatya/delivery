@@ -126,20 +126,20 @@ def ordered():
     return render_template("ordered.html")
 
 
-res = requests.get('https://sheetdb.io/api/v1/459o1nx4znd0i')
-data = json.loads(res.text)
+# res = requests.get('https://sheetdb.io/api/v1/459o1nx4znd0i')
+# data = json.loads(res.text)
 # list_meals=json.loads(data.json)
 # print(list_meals)
 # with open('data.json', 'r', encoding='utf-8') as filejs:
 #     contents = json.load(filejs)
-with app.app_context():
-    for item in data:
-        meal = Meal(title=str(item['title']),
-                    price=int(item['price']),
-                    description=str(item['description']),
-                    picture=str(item['picture']),
-                    category_id=int(item['category_id']))
-        db.session.add(meal)
-    db.session.commit()
-
-print(db.session.query(Meal.id).all())
+# with app.app_context():
+#     for item in data:
+#         meal = Meal(title=str(item['title']),
+#                     price=int(item['price']),
+#                     description=str(item['description']),
+#                     picture=str(item['picture']),
+#                     category_id=int(item['category_id']))
+#         db.session.add(meal)
+#     db.session.commit()
+#
+# print(db.session.query(Meal.id).all())
