@@ -1,0 +1,10 @@
+<ul> 
+    <li><a href="/">Главная админки</a></li>
+    {% if session["user"]["role"] == "admin" %}
+    <li><a href="/registration">Регистрация пользователя</a></li>
+    {% endif %}
+    <li><a href="/change-password">Смена пароля</a></li>
+</ul> 
+<form action="/logout" method="post" style="display:inline;">
+    <button type="submit">Выйти</button>
+</form>
